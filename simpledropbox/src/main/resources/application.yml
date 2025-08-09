@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: simpledropbox
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/simple_dropbox
+    username: admin
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# LocalStack Configuration
+cloud:
+  aws:
+    credentials:
+      access-key: test
+      secret-key: test
+    region:
+      static: us-east-1
+    stack:
+      auto: false
+    s3:
+      #Bucket name for storing files
+      bucket: dropbox-files
+
+s3:
+  endpoint: http://localhost:4566
+  bucket: dropbox-files
+
+server:
+  port: 8081
