@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   postgres:
     image: postgres:14.18
@@ -11,6 +12,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
 
   localstack:
     image: localstack/localstack:2.1.0
@@ -23,7 +25,7 @@ services:
       - "4566:4566"
     volumes:
       - localstack_data:/tmp/localstack
-
+      - ./init-localstack:/etc/localstack/init/ready.d
 volumes:
   postgres_data:
   localstack_data:
