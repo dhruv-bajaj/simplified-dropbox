@@ -22,7 +22,7 @@ Follow these steps to run the project locally.
 
 ### **Step 1 - Navigate to src folder of backend service**
 ```bash
-cd simplified-dropbox/src
+cd simpledropbox/src
 ```
 
 ### **Step 2 - Start required services**
@@ -32,6 +32,7 @@ docker compose up -d
 
 ### **Step 3 - Build the backend**
 ```bash
+cd ..
 mvn clean install
 ```
 
@@ -49,4 +50,8 @@ npm install
 npm run dev
 ```
 Frontend should be available at: http://localhost:5173
+
+### **Application Demo**
+
+![App Demo](assets/SimpleDropboxDemo.gif)
 
